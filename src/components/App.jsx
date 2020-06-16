@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import DetailsPage from "./DetailsPage";
+import Home from "./Home";
 
 const App = () => {
   return (
@@ -9,9 +10,8 @@ const App = () => {
         <button>
           <Link to="/">Home</Link>
         </button>
-        <Link />
         <Switch>
-          <Route path="/" component={App} />
+          <Route exact path="/" component={Home} />
           <Route path="/:id/details" component={DetailsPage} />
         </Switch>
       </Fragment>
