@@ -3,16 +3,14 @@ import React, { useState, useEffect } from "react";
 const DetailsPage = (props) => {
   const [details, setDetails] = useState([]);
 
-  const getDetails = async () => {
-    let res = await fetch(
-      `https://jsonplaceholder.typicode.com/users/${props.match.params.id}`
-    );
-    let details = await res.json();
-    console.log(details);
-    setDetails(details);
-  };
-
-  useEffect(() => {
+  useEffect((props) => {
+    const getDetails = async () => {
+      let res = await fetch(
+        `https://jsonplaceholder.typicode.com/users/${props.match.params.id}`
+      );
+      let details = await res.json();
+      setDetails(details);
+    };
     getDetails();
   }, []);
 
